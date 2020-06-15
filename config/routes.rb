@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :shares
   resources :images
   resources :fundings
   resources :product_fundings

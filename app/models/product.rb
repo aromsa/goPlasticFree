@@ -3,6 +3,8 @@ class Product < ApplicationRecord
   has_many :images
   has_many :product_fundings
   has_many :fundings, through: :product_fundings
+  has_many :shares
+  has_many :users, through: :shares
   validates :name, presence: true
   validates :name, uniqueness: { case_sensitive: false }
   validates :original_cost, presence: true

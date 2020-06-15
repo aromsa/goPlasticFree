@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_15_133124) do
+ActiveRecord::Schema.define(version: 2020_06_15_145153) do
 
   create_table "fundings", force: :cascade do |t|
     t.integer "user_id"
@@ -41,6 +41,13 @@ ActiveRecord::Schema.define(version: 2020_06_15_133124) do
     t.string "img_url"
     t.text "summary"
     t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "shares", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "product_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
