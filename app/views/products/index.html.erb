@@ -1,4 +1,37 @@
+<%= stylesheet_link_tag "products" %>
+<div class="hero-image">
+  <div class="hero-text">
+    <h1 style="font-size:50px">goPlastcFree</h1>
+    <p>Help The World One Product at a Time.</p>
+    <button>Help Change </button>
+  </div>
+</div>
+    
+    <header class="bg-primary text-center py-5 mb-4">
+  <div class="container">
+    <h1 class="font-weight-light text-white">Meet the Team</h1>
+  </div>
+</header>
 
-<% @products.each do |v|%>
-<%= link_to image_tag(v.img_url), product_path(v.id) %>
-<% end%>
+<div class="container">
+
+  <!-- Page Heading -->
+  <h1 class="my-4">Page Heading
+    <small>Secondary Text</small>
+  </h1>
+  <div class="row">
+        <% @products.each do |v|%>
+       <div class="col-lg-6 mb-4">
+        <div class="card h-100">
+        <%= link_to image_tag(v.img_url), product_path(v.id) %>
+        <div class="card-body">
+          <h4 class="card-title">
+            <%= link_to v.name, product_path(v.id) %>
+          </h4>
+          <p><%= v.summary %></p>
+        </div>
+      </div>
+    </div>
+    <% end%>
+    </div>
+
