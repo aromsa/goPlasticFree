@@ -17,3 +17,4 @@ p1 = Product.create!(name: "Colgate Optic White Advanced Whitening Toothpaste wi
 p2 =Product.create!(name: "Mrs. Meyer's Multi-Surface Cleaner", original_cost: 3.99, goal_amount: 300, start_date: "June, 17th 2020", end_date: "July, 17th 2020", summary: "surface cleaner test summary", user_id: u1.id, img_url:"https://target.scene7.com/is/image/Target/GUEST_a2a7ffa4-309c-4cf6-a513-55323a477d01?wid=488&hei=488&fmt=pjpeg")
  p3 = Product.create!(name: "Burt's Bees, Beeswax Lip Balm", original_cost: 3.59, goal_amount: 250, start_date: "June, 15th 2020", end_date: "July, 15th 2020", summary: "burts bees test summary", user_id: u2.id, img_url:"https://img.makeupalley.com/0/3/5/1/845807.JPG")
 
+p3 = Product.create!(name: "Burt's Bees, Beeswax Lip Balm", original_cost: 3.59, goal_amount: 250, start_date: "June, 15th 2020", end_date: "July, 15th 2020", summary: "burts bees test summary", user_id: u2.id, img_url:"https://img.makeupalley.com/0/3/5/1/845807.JPG")
