@@ -1,18 +1,61 @@
-<div><%= image_tag(@product.img_url)%></div>
 
-<div>The Product:<%= @product.name %></div>
+  <!-- Portfolio Item Heading -->
+  <br>
+  <h5 class="my-4"><%= @product.name %>
+  </h5>
+<br>
+  <!-- Portfolio Item Row -->
+  <div class="row">
 
-<div>Why This is Important<%= @product.summary %></div>
+    <div class="col-md-7">
+      <%= image_tag(@product.img_url)%>
+    </div>
 
-<div>Original Cost:<%= @product.original_cost%></div>
+    <div class="col-md-4">
+      <h3 class="my-3">Why This Change Matters</h3>
+      <p><%= @product.summary %></p>
+      <h3 class="my-3">Project Details</h3>
+      <ul>
+        <li>The Original cost for this product is $<%= @product.original_cost%></li>
+        <li>We are trying to Raise $<%= @product.goal_amount%></li>
+        <li>This Project started <%= @product.start_date %></li>
+        <li>Funding will End <%= @product.end_date %></li>
+        <li>This project Was Started By <%= @product.user.name %></li>
+      </ul>
+    </div>
 
-<div>We are Trying to raise:<%= @product.goal_amount%></div>
+  </div>
+  
+  <h3 class="my-4">Related Projects</h3>
 
-<div>This Project started:<%= @product.start_date %></div>
+  <div class="row">
 
-<div>The Funding will end:<%= @product.end_date %></div>
+    <div class="col-md-3 col-sm-6 mb-4">
+      <a href="#">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+          </a>
+    </div>
 
-<div>The organizer of this Movement is <%=@product.user.name  %></div>
+    <div class="col-md-3 col-sm-6 mb-4">
+      <a href="#">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+          </a>
+    </div>
 
+    <div class="col-md-3 col-sm-6 mb-4">
+      <a href="#">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+          </a>
+    </div>
 
- 
+    <div class="col-md-3 col-sm-6 mb-4">
+      <a href="#">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+          </a>
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
