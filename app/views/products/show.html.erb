@@ -1,0 +1,18 @@
+<div><%= image_tag(@product.img_url)%></div>
+
+<div>The Product:<%= @product.name %></div>
+
+<div>Why This is Important<%= @product.summary %></div>
+
+<div>Original Cost:<%= @product.original_cost%></div>
+
+<div>We are Trying to raise:<%= @product.goal_amount%></div>
+
+<div>This Project started:<%= @product.start_date %></div>
+
+<div>The Funding will end:<%= @product.end_date %></div>
+
+<div>The organizer of this Movement is <%=@product.user.name  %></div>
+
+
+ 

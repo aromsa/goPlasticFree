@@ -9,7 +9,6 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.string :img_url
       t.text :summary
       t.integer :user_id
-
       t.timestamps
     end
   end
