@@ -1,0 +1,12 @@
+# <div><%= image_tag(@user.img_url)%></div>
+
+<div>User Name:<%= @user.name %></div>
+
+<div>Interests<%= "@user.interests will go here when we update schema" %></div>
+
+<div><%= "#{@user.name} has Seed Status:#{@user.seed_status}, Sprout Status:#{@user.sprout_status}, Tree Status: #{@user.tree_status}"%></div>
+
+<div>Funded Products:<%= @user.funded_products.each {|fp| fp.name}%></div>
+
+<div>Shared Products:<%= @user.funded_products.each {|fp| fp.name}%></div>
+

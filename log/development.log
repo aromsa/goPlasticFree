@@ -1344,3 +1344,171 @@ Migrating to CreateShares (20200615145153)
   [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 5]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 6]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Destroy (0.4ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 1]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Destroy (0.3ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 2]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Destroy (0.3ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 3]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "address", "cc", "password", "seed_status", "sprout_status", "tree_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Anthony"], ["email", "anthony@gmail.com"], ["address", "123 Smart St., New York, NY 11215"], ["cc", 1234567890], ["password", "Antman44"], ["seed_status", 0], ["sprout_status", 0], ["tree_status", 1], ["created_at", "2020-06-15 16:31:30.451026"], ["updated_at", "2020-06-15 16:31:30.451026"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "address", "cc", "password", "seed_status", "sprout_status", "tree_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Anna"], ["email", "anna@gmail.com"], ["address", "432 Pepper St., New York, NY 11215"], ["cc", 7987654321], ["password", "Anna1234"], ["seed_status", 0], ["sprout_status", 1], ["tree_status", 0], ["created_at", "2020-06-15 16:31:30.457355"], ["updated_at", "2020-06-15 16:31:30.457355"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER(?) LIMIT ?[0m  [["name", "Colgate Optic White Advanced Whitening Toothpaste with 2% Hydrogen Peroxide - Sparkling White - 3.2oz"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (1.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 7]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (1.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 8]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "address", "cc", "password", "seed_status", "sprout_status", "tree_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Anthony"], ["email", "anthony@gmail.com"], ["address", "123 Smart St., New York, NY 11215"], ["cc", 1234567890], ["password", "Antman44"], ["seed_status", 0], ["sprout_status", 0], ["tree_status", 1], ["created_at", "2020-06-15 16:36:14.208380"], ["updated_at", "2020-06-15 16:36:14.208380"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "address", "cc", "password", "seed_status", "sprout_status", "tree_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Anna"], ["email", "anna@gmail.com"], ["address", "432 Pepper St., New York, NY 11215"], ["cc", 7987654321], ["password", "Anna1234"], ["seed_status", 0], ["sprout_status", 1], ["tree_status", 0], ["created_at", "2020-06-15 16:36:14.215766"], ["updated_at", "2020-06-15 16:36:14.215766"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER(?) LIMIT ?[0m  [["name", "Colgate Optic White Advanced Whitening Toothpaste with 2% Hydrogen Peroxide - Sparkling White - 3.2oz"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 9]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 10]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "address", "cc", "password", "seed_status", "sprout_status", "tree_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Anthony"], ["email", "anthony@gmail.com"], ["address", "123 Smart St., New York, NY 11215"], ["cc", 1234567890], ["password", "Antman44"], ["seed_status", 0], ["sprout_status", 0], ["tree_status", 1], ["created_at", "2020-06-15 16:37:06.182374"], ["updated_at", "2020-06-15 16:37:06.182374"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "address", "cc", "password", "seed_status", "sprout_status", "tree_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Anna"], ["email", "anna@gmail.com"], ["address", "432 Pepper St., New York, NY 11215"], ["cc", 7987654321], ["password", "Anna1234"], ["seed_status", 0], ["sprout_status", 1], ["tree_status", 0], ["created_at", "2020-06-15 16:37:06.188349"], ["updated_at", "2020-06-15 16:37:06.188349"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER(?) LIMIT ?[0m  [["name", "Colgate Optic White Advanced Whitening Toothpaste with 2% Hydrogen Peroxide - Sparkling White - 3.2oz"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 11]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 12]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "address", "cc", "password", "seed_status", "sprout_status", "tree_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Anthony"], ["email", "anthony@gmail.com"], ["address", "123 Smart St., New York, NY 11215"], ["cc", 1234567890], ["password", "Antman44"], ["seed_status", 0], ["sprout_status", 0], ["tree_status", 1], ["created_at", "2020-06-15 16:51:21.505542"], ["updated_at", "2020-06-15 16:51:21.505542"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "address", "cc", "password", "seed_status", "sprout_status", "tree_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Anna"], ["email", "anna@gmail.com"], ["address", "432 Pepper St., New York, NY 11215"], ["cc", 7987654321], ["password", "Anna1234"], ["seed_status", 0], ["sprout_status", 1], ["tree_status", 0], ["created_at", "2020-06-15 16:51:21.511638"], ["updated_at", "2020-06-15 16:51:21.511638"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER(?) LIMIT ?[0m  [["name", "Colgate Optic White Advanced Whitening Toothpaste with 2% Hydrogen Peroxide - Sparkling White - 3.2oz"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 13]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 14]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "address", "cc", "password", "seed_status", "sprout_status", "tree_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Anthony"], ["email", "anthony@gmail.com"], ["address", "123 Smart St., New York, NY 11215"], ["cc", 1234567890], ["password", "Antman44"], ["seed_status", 0], ["sprout_status", 0], ["tree_status", 1], ["created_at", "2020-06-15 16:55:40.909762"], ["updated_at", "2020-06-15 16:55:40.909762"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "address", "cc", "password", "seed_status", "sprout_status", "tree_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Anna"], ["email", "anna@gmail.com"], ["address", "432 Pepper St., New York, NY 11215"], ["cc", 7987654321], ["password", "Anna1234"], ["seed_status", 0], ["sprout_status", 1], ["tree_status", 0], ["created_at", "2020-06-15 16:55:40.916066"], ["updated_at", "2020-06-15 16:55:40.916066"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER(?) LIMIT ?[0m  [["name", "Colgate Optic White Advanced Whitening Toothpaste with 2% Hydrogen Peroxide - Sparkling White - 3.2oz"], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "original_cost", "goal_amount", "start_date", "end_date", "img_url", "summary", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Colgate Optic White Advanced Whitening Toothpaste with 2% Hydrogen Peroxide - Sparkling White - 3.2oz"], ["original_cost", 4.99], ["goal_amount", 200], ["start_date", "June, 15th 2020"], ["end_date", "July, 15th 2020"], ["img_url", "https://target.scene7.com/is/image/Target/GUEST_19c84d64-f53a-4215-8ab1-e17c442611de?wid=488&hei=488&fmt=pjpeg"], ["summary", "colgate test summary colgate test summary colgate test summary colgate test summary colgate test summary colgate test summary colgate test summary colgate test summary colgate test summary"], ["user_id", 15], ["created_at", "2020-06-15 16:55:40.941192"], ["updated_at", "2020-06-15 16:55:40.941192"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER(?) LIMIT ?[0m  [["name", "Mrs. Meyer's Multi-Surface Cleaner"], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "original_cost", "goal_amount", "start_date", "end_date", "img_url", "summary", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mrs. Meyer's Multi-Surface Cleaner"], ["original_cost", 3.99], ["goal_amount", 300], ["start_date", "June, 17th 2020"], ["end_date", "July, 17th 2020"], ["img_url", "https://target.scene7.com/is/image/Target/GUEST_a2a7ffa4-309c-4cf6-a513-55323a477d01?wid=488&hei=488&fmt=pjpeg"], ["summary", "surface cleaner test summary surface cleaner test summary surface cleaner test summary surface cleaner test summary surface cleaner test summary surface cleaner test summary surface cleaner test summary surface cleaner test summary surface cleaner test summary "], ["user_id", 15], ["created_at", "2020-06-15 16:55:40.951369"], ["updated_at", "2020-06-15 16:55:40.951369"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE LOWER("products"."name") = LOWER(?) LIMIT ?[0m  [["name", "Burt's Bees, Beeswax Lip Balm"], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "original_cost", "goal_amount", "start_date", "end_date", "img_url", "summary", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Burt's Bees, Beeswax Lip Balm"], ["original_cost", 3.59], ["goal_amount", 250], ["start_date", "June, 15th 2020"], ["end_date", "July, 15th 2020"], ["img_url", "https://img.makeupalley.com/0/3/5/1/845807.JPG"], ["summary", "burts bees test summary burts bees test summary burts bees test summary burts bees test summary burts bees test summary burts bees test summary burts bees test summary burts bees test summary burts bees test summary burts bees test summary"], ["user_id", 16], ["created_at", "2020-06-15 16:55:40.960454"], ["updated_at", "2020-06-15 16:55:40.960454"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mFunding Create (0.4ms)[0m  [1m[32mINSERT INTO "fundings" ("user_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 15], ["amount", 3.99], ["created_at", "2020-06-15 16:55:40.979300"], ["updated_at", "2020-06-15 16:55:40.979300"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mFunding Load (0.1ms)[0m  [1m[34mSELECT "fundings".* FROM "fundings" WHERE "fundings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProductFunding Create (0.5ms)[0m  [1m[32mINSERT INTO "product_fundings" ("product_id", "funding_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 5], ["funding_id", 1], ["created_at", "2020-06-15 16:55:40.999426"], ["updated_at", "2020-06-15 16:55:40.999426"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mFunding Load (0.6ms)[0m  [1m[34mSELECT "fundings".* FROM "fundings" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mProductFunding Load (0.8ms)[0m  [1m[34mSELECT "product_fundings".* FROM "product_fundings" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFunding Load (0.3ms)[0m  [1m[34mSELECT "fundings".* FROM "fundings" WHERE "fundings"."user_id" = ? LIMIT ?[0m  [["user_id", 15], ["LIMIT", 11]]
+  [1m[36mFunding Load (0.4ms)[0m  [1m[34mSELECT "fundings".* FROM "fundings" WHERE "fundings"."user_id" = ? LIMIT ?[0m  [["user_id", 15], ["LIMIT", 11]]
+  [1m[36mProductFunding Load (0.4ms)[0m  [1m[34mSELECT "product_fundings".* FROM "product_fundings" INNER JOIN "fundings" ON "product_fundings"."funding_id" = "fundings"."id" WHERE "fundings"."user_id" = ? LIMIT ?[0m  [["user_id", 15], ["LIMIT", 11]]
+  [1m[36mProductFunding Load (0.3ms)[0m  [1m[34mSELECT "product_fundings".* FROM "product_fundings" INNER JOIN "fundings" ON "product_fundings"."funding_id" = "fundings"."id" WHERE "fundings"."user_id" = ? LIMIT ?[0m  [["user_id", 15], ["LIMIT", 11]]
+  [1m[36mProductFunding Load (0.4ms)[0m  [1m[34mSELECT "product_fundings".* FROM "product_fundings" INNER JOIN "fundings" ON "product_fundings"."funding_id" = "fundings"."id" WHERE "fundings"."user_id" = ? LIMIT ?[0m  [["user_id", 15], ["LIMIT", 11]]
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProductFunding Load (0.3ms)[0m  [1m[34mSELECT "product_fundings".* FROM "product_fundings" INNER JOIN "fundings" ON "product_fundings"."funding_id" = "fundings"."id" WHERE "fundings"."user_id" = ?[0m  [["user_id", 15]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProductFunding Load (0.2ms)[0m  [1m[34mSELECT "product_fundings".* FROM "product_fundings" INNER JOIN "fundings" ON "product_fundings"."funding_id" = "fundings"."id" WHERE "fundings"."user_id" = ?[0m  [["user_id", 15]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProductFunding Load (0.2ms)[0m  [1m[34mSELECT "product_fundings".* FROM "product_fundings" INNER JOIN "fundings" ON "product_fundings"."funding_id" = "fundings"."id" WHERE "fundings"."user_id" = ?[0m  [["user_id", 15]]
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProductFunding Load (0.2ms)[0m  [1m[34mSELECT "product_fundings".* FROM "product_fundings" INNER JOIN "fundings" ON "product_fundings"."funding_id" = "fundings"."id" WHERE "fundings"."user_id" = ?[0m  [["user_id", 15]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProductFunding Load (0.2ms)[0m  [1m[34mSELECT "product_fundings".* FROM "product_fundings" INNER JOIN "fundings" ON "product_fundings"."funding_id" = "fundings"."id" WHERE "fundings"."user_id" = ?[0m  [["user_id", 15]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProductFunding Load (0.3ms)[0m  [1m[34mSELECT "product_fundings".* FROM "product_fundings" INNER JOIN "fundings" ON "product_fundings"."funding_id" = "fundings"."id" WHERE "fundings"."user_id" = ?[0m  [["user_id", 15]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
