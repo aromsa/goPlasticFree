@@ -13,6 +13,11 @@ Funding.destroy_all
 ProductFunding.destroy_all
 Share.destroy_all
 
+u1 = User.create(name: "Anthony", email: "anthony@gmail.com", address: "123 Smart St., New York, NY 11215", cc: 1234567890, password: "Antman44", interests: "Coffee at 8pm, late night coding", img_url: "https://ca.slack-edge.com/T02MD9XTF-U011R2GNU93-18e59a10dd1c-512")
+u2 = User.create(name: "Anna", email: "anna@gmail.com", address: "432 Pepper St., New York, NY 11215", cc: 7987654321, password: "Anna1234", interests: "Pottery, plants, and going plastic free!", img_url: "https://ca.slack-edge.com/T02MD9XTF-U010KJG3FUG-b921e9ae0781-512")
+u3 = User.create(name: "Yoan", email: "yoan@gmail.com", address: "000 Outerspace Court, New York, NY 10123", cc: 989872976, password: "Yoan1234",  interests: "Space, BBQ, and beard grooming", img_url: "https://i.imgur.com/gqre4d5.jpg")
+
+
 
 p1 = Product.create!(name: "Colgate Optic White Advanced Whitening Toothpaste with 2% Hydrogen Peroxide - Sparkling White - 3.2oz", original_cost: 4.99, goal_amount: 200, start_date: "June, 15th 2020", end_date: "July, 15th 2020", summary: "colgate test summary colgate test summary colgate test summary colgate test summary colgate test summary colgate test summary colgate test summary colgate test summary colgate test summary", user_id: u1.id, img_url:"https://target.scene7.com/is/image/Target/GUEST_19c84d64-f53a-4215-8ab1-e17c442611de?wid=488&hei=488&fmt=pjpeg")
 p2 = Product.create!(name: "Mrs. Meyer's Multi-Surface Cleaner", original_cost: 3.99, goal_amount: 300, start_date: "June, 17th 2020", end_date: "July, 17th 2020", summary: "surface cleaner test summary surface cleaner test summary surface cleaner test summary surface cleaner test summary surface cleaner test summary surface cleaner test summary surface cleaner test summary surface cleaner test summary surface cleaner test summary ", user_id: u1.id, img_url:"https://target.scene7.com/is/image/Target/GUEST_a2a7ffa4-309c-4cf6-a513-55323a477d01?wid=488&hei=488&fmt=pjpeg")
