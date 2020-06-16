@@ -5,7 +5,7 @@
   <div class="row">
 
     <div class="col-sm-6 col-md-6 col-lg-4">
-      <img src= <%=@user.img_url%> class="img-fluid">
+      <img src= <%=@user.img_url%> class="img-thumbnail">
     </div>
 
     <div class="col-md-4">
@@ -22,19 +22,36 @@
   </div>
   <!-- /.row -->
   <!-- Related Projects Row -->
+  <% if @user.funded_products.count > 0 %> 
   <h3 class="my-4">Funded Products</h3>
-
   <div class="row">
-
-    <div class="col-md-3 col-sm-6 mb-4">
+    
     <% @user.funded_products.uniq.each do |fp|%>
+     <div class="col-md-3 col-sm-6 mb-4">
       <a href= <%=product_path(fp.id)%> >
-            <img class="img-fluid" src= <%= fp.img_url %> alt="">
+            <img class="img-thumbnail my-thumbnail" src= <%= fp.img_url %> alt="">
           </a>
+          </div>
+          <%end%>
           <%end%>
 
+  </div>
 
-    </div>
+  <!-- /.row -->
+  <!-- Related Projects Row -->
+  <% if @user.shared_products.count > 0 %>
+  <h3 class="my-4">Shared Products</h3>
+   <div class="row">
+
+    <% @user.shared_products.uniq.each do |sp|%>
+     <div class="col-md-3 col-sm-6 mb-4">
+      <a href= <%=product_path(sp.id)%> >
+            <img class="img-thumbnail my-thumbnail" src= <%= sp.img_url %> alt="">
+          </a>
+          </div>
+          <%end%>
+      <%end%>
+    
   </div>
 
 </div>
