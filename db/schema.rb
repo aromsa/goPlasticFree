@@ -59,9 +59,9 @@ ActiveRecord::Schema.define(version: 2020_06_15_145153) do
     t.string "address"
     t.integer "cc"
     t.string "password"
-    t.boolean "seed_status"
-    t.boolean "sprout_status"
-    t.boolean "tree_status"
+    t.string "status"
+    t.string "interests"
+    t.string "img_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
