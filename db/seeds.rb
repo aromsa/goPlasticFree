@@ -13,8 +13,8 @@ Funding.destroy_all
 ProductFunding.destroy_all
 Share.destroy_all
 
-u1 = User.create(name: "Anthony", email: "anthony@gmail.com", address: "123 Smart St., New York, NY 11215", cc: 1234567890, password: "Antman44", status: nil, interests: "Coffee at 8pm, late night coding")
-u2 = User.create(name: "Anna", email: "anna@gmail.com", address: "432 Pepper St., New York, NY 11215", cc: 7987654321, password: "Anna1234", status: nil, interests: "Pottery, plants, and going plastic free!")
+u1 = User.create(name: "Anthony", email: "anthony@gmail.com", address: "123 Smart St., New York, NY 11215", cc: 1234567890, password: "Antman44", status: nil, interests: "Coffee at 8pm, late night coding", img_url: "https://ca.slack-edge.com/T02MD9XTF-U011R2GNU93-18e59a10dd1c-512")
+u2 = User.create(name: "Anna", email: "anna@gmail.com", address: "432 Pepper St., New York, NY 11215", cc: 7987654321, password: "Anna1234", status: nil, interests: "Pottery, plants, and going plastic free!", img_url: "https://ca.slack-edge.com/T02MD9XTF-U010KJG3FUG-b921e9ae0781-512")
 u3 = User.create(name: "Yoan", email: "yoan@gmail.com", address: "000 Outerspace Court, New York, NY 10123", cc: 989872976, password: "Yoan1234", status: nil, interests: "Space, BBQ, and beard grooming", img_url: "https://i.imgur.com/gqre4d5.jpg")
 
 
@@ -24,6 +24,7 @@ p2 = Product.create!(name: "Mrs. Meyer's Multi-Surface Cleaner", original_cost: 
 p3 = Product.create!(name: "Burt's Bees, Beeswax Lip Balm", original_cost: 3.59, goal_amount: 250, start_date: "June, 15th 2020", end_date: "July, 15th 2020", summary: "burts bees test summary burts bees test summary burts bees test summary burts bees test summary burts bees test summary burts bees test summary burts bees test summary burts bees test summary burts bees test summary burts bees test summary", user_id: u2.id, img_url:"https://img.makeupalley.com/0/3/5/1/845807.JPG")
 p4 = Product.create!(name: "OGX Extra Strength Refreshing Scalp + Tea Tree Mint Shampoo - 13 fl oz", original_cost: 6.99, goal_amount: 250, start_date: "June, 15th 2020", end_date: "July, 15th 2020", summary: "Shampoo summary", user_id: u2.id, img_url: "https://www.target.com/p/ogx-extra-strength-refreshing-scalp-tea-tree-mint-shampoo-13-fl-oz/-/A-52663527#")
 p5 = Product.create!(name: "OGX Extra Strength Refreshing Scalp + Tea Tree Mint Conditioner - 13 fl oz", original_cost: 6.99, goal_amount: 250, start_date: "June, 15th 2020", end_date: "July, 15th 2020", summary: "Conditioner summary", user_id: u2.id, img_url: "https://www.target.com/p/ogx-extra-strength-refreshing-scalp-tea-tree-mint-conditioner-13-fl-oz/-/A-52663573#")
+p6 = Product.create!(name: "Bull's Eye Original Barbecue Sauce, 18oz", original_cost: 13.35, goal_amount: 200, start_date: "June, 15th 2020", end_date: "July, 15th 2020", summary: "BBQ summary", user_id: u3.id, img_url: "https://images-na.ssl-images-amazon.com/images/I/81lo7xNFljL._SL1500_.jpg")
 
 
 f1 = Funding.create!(user_id: u1.id, amount: 3.99)

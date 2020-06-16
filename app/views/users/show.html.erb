@@ -5,7 +5,7 @@
   <div class="row">
 
     <div class="col-sm-6 col-md-6 col-lg-4">
-      <img src="https://i.imgur.com/gqre4d5.jpg" class="img-fluid">
+      <img src= <%=@user.img_url%> class="img-fluid">
     </div>
 
     <div class="col-md-4">
@@ -27,27 +27,14 @@
   <div class="row">
 
     <div class="col-md-3 col-sm-6 mb-4">
-      <a href="#">
-            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+    <% @user.funded_products.uniq.each do |fp|%>
+      <a href= <%=product_path(fp.id)%> >
+            <img class="img-fluid" src= <%= fp.img_url %> alt="">
           </a>
-    </div>
+          <%end%>
 
-    <div class="col-md-3 col-sm-6 mb-4">
-      <a href="#">
-            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-          </a>
-    </div>
 
-    <div class="col-md-3 col-sm-6 mb-4">
-      <a href="#">
-            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-          </a>
     </div>
-
-    <div class="col-md-3 col-sm-6 mb-4">
-    <a href="#">
-          <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-        </a>
   </div>
 
 </div>
