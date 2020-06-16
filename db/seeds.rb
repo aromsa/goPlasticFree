@@ -18,3 +18,13 @@ p2 =Product.create!(name: "Mrs. Meyer's Multi-Surface Cleaner", original_cost: 3
  p3 = Product.create!(name: "Burt's Bees, Beeswax Lip Balm", original_cost: 3.59, goal_amount: 250, start_date: "June, 15th 2020", end_date: "July, 15th 2020", summary: "burts bees test summary", user_id: u2.id, img_url:"https://img.makeupalley.com/0/3/5/1/845807.JPG")
 
 p3 = Product.create!(name: "Burt's Bees, Beeswax Lip Balm", original_cost: 3.59, goal_amount: 250, start_date: "June, 15th 2020", end_date: "July, 15th 2020", summary: "burts bees test summary", user_id: u2.id, img_url:"https://img.makeupalley.com/0/3/5/1/845807.JPG")
+
+funding1 = Funding.create!(user_id: u2.id, amount:30)
+funding2 = Funding.create!(user_id: u2.id, amount:50)
+funding3 = Funding.create!(user_id: u2.id, amount:50)
+
+prf1 = ProductFunding.create!(product_id: p2.id, funding_id:funding1.id)
+prf2 = ProductFunding.create!(product_id: p2.id, funding_id:funding2.id)
+prf3 = ProductFunding.create!(product_id: p1.id, funding_id:funding3.id)
+
+

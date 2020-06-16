@@ -12,4 +12,6 @@ class Product < ApplicationRecord
   validates :goal_amount, numericality: { only_integer: true }
   validates_format_of :img_url, :with => %r{\.(png|jpg|jpeg)\z}i, :message => "Use a real image"
   validates :summary, length: { minimum: 50 }
+
+
 end

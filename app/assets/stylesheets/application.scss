@@ -1,3 +1,9 @@
 
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+
+body {
+  background: rgb(245, 245, 245);
+}
+
+a { color: inherit; } 
