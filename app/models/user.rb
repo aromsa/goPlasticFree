@@ -12,24 +12,20 @@ class User < ApplicationRecord
   end
 
   def shared_products
-    self.
-  end
-
-  def user_status
-    if self.funded_products.count >= 0
-      self.update(seed_status:true)
-      self.update(sprout_status:false)
-      self.update(tree_status:false)
-    elsif self.funded_products.count >= 5
-      self.update(seed_status:false)
-      self.update(sprout_status:true)
-      self.update(tree_status:false)
-    else self.funded_products.count >= 10
-      self.update(seed_status:false)
-      self.update(sprout_status:false)
-      self.update(tree_status:true)
+    self.shares.map do |s|
+      s.product
     end
   end
 
+  def update_status
+    if self.funded_products.count >= 10
+      self.update(status: "Tree Status")
+    elsif self.funded_products.count >= 5
+      self.update(status: "Sprout Status")
+    else self.funded_products.count < 5
+      self.update(status: "Seed Status")
+    end
+    self.status
+  end
 
 end

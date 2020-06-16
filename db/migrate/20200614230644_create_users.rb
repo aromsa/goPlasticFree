@@ -6,9 +6,9 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :address
       t.integer :cc
       t.string :password
-      t.boolean :seed_status
-      t.boolean :sprout_status
-      t.boolean :tree_status
+      t.string :status
+      t.string :interests
+      t.string :img_url
 
       t.timestamps
     end
