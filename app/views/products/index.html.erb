@@ -4,7 +4,11 @@
 
     <%= image_tag("https://i.imgur.com/QQSW1m3.png",:class => "center")  %>
     <p>One product at a time.</p>
+    <% if logged_in?%>
+    <%= link_to 'View My Profile', user_path(current_user), :class => "btn btn-outline-light text-light>Light</button>"%>
+    <% else%>
     <%= link_to 'Get Started', new_user_path, :class => "btn btn-outline-light text-light>Light</button>" %>
+    <% end%>
   
     </div>
 </div><br>
