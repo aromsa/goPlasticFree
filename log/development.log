@@ -24109,3 +24109,287 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 32ms (Views: 29.7ms | ActiveRecord: 0.6ms | Allocations: 10249)
 
 
+Started GET "/products" for ::1 at 2020-06-16 10:44:55 -0400
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:25
+  Rendered products/index.html.erb within layouts/application (Duration: 671.1ms | Allocations: 23370)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 887ms (Views: 798.1ms | ActiveRecord: 4.4ms | Allocations: 36539)
+
+
+Started GET "/products/1" for ::1 at 2020-06-16 10:45:18 -0400
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:6:in `show'
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:18
+  [1m[36mProductFunding Load (0.8ms)[0m  [1m[34mSELECT "product_fundings".* FROM "product_fundings" WHERE "product_fundings"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/show.html.erb:39:in `map'
+  [1m[36mFunding Load (0.7ms)[0m  [1m[34mSELECT "fundings".* FROM "fundings" WHERE "fundings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:40
+  [1m[36mCACHE Funding Load (0.0ms)[0m  [1m[34mSELECT "fundings".* FROM "fundings" WHERE "fundings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:55
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:56
+  Rendered products/show.html.erb within layouts/application (Duration: 347.6ms | Allocations: 27624)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 422ms (Views: 367.0ms | ActiveRecord: 11.4ms | Allocations: 37973)
+
+
+Started GET "/users/1" for ::1 at 2020-06-16 10:45:23 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mProductFunding Load (14.6ms)[0m  [1m[34mSELECT "product_fundings".* FROM "product_fundings" INNER JOIN "fundings" ON "product_fundings"."funding_id" = "fundings"."id" WHERE "fundings"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:9:in `map'
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:10:in `block in funded_products'
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:10:in `block in funded_products'
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:10:in `block in funded_products'
+  [1m[36mCACHE Product Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:10:in `block in funded_products'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:10:in `block in funded_products'
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:10:in `block in funded_products'
+  Rendered users/show.html.erb within layouts/application (Duration: 148.0ms | Allocations: 9298)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 283ms (Views: 249.0ms | ActiveRecord: 17.7ms | Allocations: 17794)
+
+
+Started GET "/products/1" for ::1 at 2020-06-16 10:45:27 -0400
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:6:in `show'
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mUser Load (12.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:18
+  [1m[36mProductFunding Load (0.3ms)[0m  [1m[34mSELECT "product_fundings".* FROM "product_fundings" WHERE "product_fundings"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/show.html.erb:39:in `map'
+  [1m[36mFunding Load (0.8ms)[0m  [1m[34mSELECT "fundings".* FROM "fundings" WHERE "fundings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:40
+  [1m[36mCACHE Funding Load (0.1ms)[0m  [1m[34mSELECT "fundings".* FROM "fundings" WHERE "fundings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:55
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:56
+  Rendered products/show.html.erb within layouts/application (Duration: 68.5ms | Allocations: 4665)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 206ms (Views: 140.3ms | ActiveRecord: 13.6ms | Allocations: 12507)
+
+
+Started GET "/products" for ::1 at 2020-06-16 10:45:35 -0400
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:25
+  Rendered products/index.html.erb within layouts/application (Duration: 11.1ms | Allocations: 2430)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 50ms (Views: 47.3ms | ActiveRecord: 0.7ms | Allocations: 9733)
+
+
+Started GET "/users/new" for ::1 at 2020-06-16 10:45:40 -0400
+  
+AbstractController::ActionNotFound (The action 'new' could not be found for UsersController):
+  
+actionpack (6.0.3.1) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.3.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.1) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/products" for ::1 at 2020-06-16 10:45:44 -0400
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (3.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:25
+  Rendered products/index.html.erb within layouts/application (Duration: 79.3ms | Allocations: 2455)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 183ms (Views: 176.8ms | ActiveRecord: 3.9ms | Allocations: 9771)
+
+
+Started GET "/products" for ::1 at 2020-06-16 10:49:51 -0400
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:25
+  Rendered products/index.html.erb within layouts/application (Duration: 28.3ms | Allocations: 2692)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 89ms (Views: 81.6ms | ActiveRecord: 0.7ms | Allocations: 10966)
+
+
+Started GET "/products" for ::1 at 2020-06-16 10:49:55 -0400
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:25
+  Rendered products/index.html.erb within layouts/application (Duration: 17.1ms | Allocations: 2423)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 73ms (Views: 69.0ms | ActiveRecord: 1.9ms | Allocations: 9719)
+
+
+Started GET "/products" for ::1 at 2020-06-16 10:49:58 -0400
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:25
+  Rendered products/index.html.erb within layouts/application (Duration: 117.4ms | Allocations: 2417)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 172ms (Views: 170.4ms | ActiveRecord: 0.5ms | Allocations: 9711)
+
+
+Started GET "/products" for ::1 at 2020-06-16 10:50:00 -0400
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:25
+  Rendered products/index.html.erb within layouts/application (Duration: 18.8ms | Allocations: 2420)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 94ms (Views: 92.3ms | ActiveRecord: 0.4ms | Allocations: 9709)
+
+
+Started GET "/products/1" for ::1 at 2020-06-16 10:50:06 -0400
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:6:in `show'
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:18
+  [1m[36mProductFunding Load (0.3ms)[0m  [1m[34mSELECT "product_fundings".* FROM "product_fundings" WHERE "product_fundings"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/show.html.erb:39:in `map'
+  [1m[36mFunding Load (0.9ms)[0m  [1m[34mSELECT "fundings".* FROM "fundings" WHERE "fundings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:40
+  [1m[36mCACHE Funding Load (0.0ms)[0m  [1m[34mSELECT "fundings".* FROM "fundings" WHERE "fundings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:55
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:56
+  Rendered products/show.html.erb within layouts/application (Duration: 53.2ms | Allocations: 5182)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 212ms (Views: 199.7ms | ActiveRecord: 3.5ms | Allocations: 13168)
+
+
+Started GET "/products" for ::1 at 2020-06-16 10:50:08 -0400
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:25
+  Rendered products/index.html.erb within layouts/application (Duration: 16.8ms | Allocations: 2419)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 93ms (Views: 90.5ms | ActiveRecord: 0.5ms | Allocations: 9718)
+
+
+Started GET "/products/1" for ::1 at 2020-06-16 10:50:11 -0400
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:6:in `show'
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:18
+  [1m[36mProductFunding Load (0.5ms)[0m  [1m[34mSELECT "product_fundings".* FROM "product_fundings" WHERE "product_fundings"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/show.html.erb:39:in `map'
+  [1m[36mFunding Load (0.4ms)[0m  [1m[34mSELECT "fundings".* FROM "fundings" WHERE "fundings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:40
+  [1m[36mCACHE Funding Load (0.1ms)[0m  [1m[34mSELECT "fundings".* FROM "fundings" WHERE "fundings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:55
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:56
+  Rendered products/show.html.erb within layouts/application (Duration: 115.5ms | Allocations: 4656)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 233ms (Views: 226.7ms | ActiveRecord: 1.9ms | Allocations: 12480)
+
+
+Started GET "/users/1" for ::1 at 2020-06-16 10:50:14 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mProductFunding Load (0.3ms)[0m  [1m[34mSELECT "product_fundings".* FROM "product_fundings" INNER JOIN "fundings" ON "product_fundings"."funding_id" = "fundings"."id" WHERE "fundings"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:9:in `map'
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:10:in `block in funded_products'
+  [1m[36mProduct Load (2.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:10:in `block in funded_products'
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:10:in `block in funded_products'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:10:in `block in funded_products'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:10:in `block in funded_products'
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:10:in `block in funded_products'
+  Rendered users/show.html.erb within layouts/application (Duration: 48.6ms | Allocations: 6024)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 124ms (Views: 106.2ms | ActiveRecord: 5.1ms | Allocations: 14595)
+
+
+Started GET "/products" for ::1 at 2020-06-16 10:50:16 -0400
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:25
+  Rendered products/index.html.erb within layouts/application (Duration: 15.8ms | Allocations: 2425)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 123ms (Views: 119.5ms | ActiveRecord: 0.4ms | Allocations: 9723)
+
+
