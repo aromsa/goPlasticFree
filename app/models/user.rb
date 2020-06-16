@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_secure_password
   has_many :fundings
   has_many :product_fundings, through: :fundings
   has_many :products
