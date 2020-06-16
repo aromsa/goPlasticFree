@@ -16,8 +16,12 @@
    <a class="navbar-brand" href="/products">
     <img src="https://i.imgur.com/gfBU17p.png" width="200" height="60" alt="">
   </a>
+  <% if logged_in?%>
+  <%= link_to current_user.name, user_path(current_user), :class =>"btn btn-outline-success" %>
+  </nav>
+  <% else%>
   <form class="form-inline">
-    <a class="btn btn-outline-primary" href="/login" role="button">
+    <a class="btn btn-outline-primary" href="/sessions/new" role="button">
     Login
     </a>
     <div style="padding-left: 10px;">
@@ -27,6 +31,7 @@
     </div>
   </form>
 </nav>
+<% end%>
 
     <%= yield %>
   </body>
