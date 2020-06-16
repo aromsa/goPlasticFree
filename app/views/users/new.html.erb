@@ -3,33 +3,23 @@
 </div>
 
 <div class="container p-3 my-3 border">
-  <form action="/users">
+  <%= form_for @user do |f| %>
     <div class="form-group">
-      <label for="name">Name:</label>
-      <input type="name" class="form-control" placeholder="Enter name" id="name">
+      <%= f.label :name %>
+      <%= f.text_field :name, {class:"form-control", placeholder:"Enter name"}%>
     </div>
     <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" placeholder="Enter email" id="email">
+      <%= f.label :email %>
+      <%= f.text_field :email, {class:"form-control", placeholder:"Enter email"}%>
     </div>
     <div class="form-group">
-    <label for="interests">Interests:</label>
-    <input type="interests" class="form-control" placeholder="Enter your interests" id="interests">
-  </div>
-  <div class="form-group">
-  <label for="img_url">Upload Profile Pic:</label>
-  <input type="photo" class="form-control" placeholder="Upload photo here" id="img_url">
-</div>
-<div class="form-group">
-<label for="password">Password:</label>
-<input type="password" class="form-control" placeholder="Your password must be at least 7 characters long." id="password">
-</div>
-    <div class="form-group form-check">
-      <label class="form-check-label">
-        <input class="form-check-input" type="checkbox"> Remember me
-      </label>
+      <%= f.label :interests %>
+      <%= f.text_field :interests, {class:"form-control", placeholder:"Enter interests"}%>
+    </div> 
+    <div class="form-group">
+      <%= f.label :password %>
+      <%= f.password_field :password, {class:"form-control", placeholder:"Your password must be at least 7 characters"}%>
     </div>
-    
-    <button type="submit" class="btn btn-success">Submit</button>
-  </form>
+    <%= f.submit "Submit", class:"btn btn-outline-success" %>
+  <%end%>
 </div>
