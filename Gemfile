@@ -58,3 +58,5 @@ gem 'bootstrap', '~> 4.5.0'
 gem 'jquery-rails'
 
 gem 'bcrypt', '~> 3.1', '>= 3.1.12'
+
+gem 'carrierwave', '~> 2.0'

@@ -38,7 +38,6 @@ f6 = Funding.create!(user_id: u1.id, amount: 6.99)
 f7 = Funding.create!(user_id: u2.id, amount: 6.99)
 
 
-
 ProductFunding.create!(product_id: p2.id, funding_id: f1.id)
 ProductFunding.create!(product_id: p1.id, funding_id: f2.id)
 ProductFunding.create!(product_id: p3.id, funding_id: f3.id)
