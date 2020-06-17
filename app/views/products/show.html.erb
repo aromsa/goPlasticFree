@@ -14,7 +14,7 @@
     </div>
 
     <div class="col-lg-5">
-    <div class="d-inline-flex p-2">This event is organized by! </div>
+    <div class="d-inline-flex p-2">This event was organized by! </div>
     <span class="badge badge-warning"><%= link_to @product.user.name, user_path(@product.user_id) %> <svg class="bi bi-person" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" d="M13 14s1 0 1-1-1-4-6-4-6 3-6 4 1 1 1 1h10zm-9.995-.944v-.002.002zM3.022 13h9.956a.274.274 0 0 0 .014-.002l.008-.002c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664a1.05 1.05 0 0 0 .022.004zm9.974.056v-.002.002zM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
 </svg></span><br><br>
@@ -22,16 +22,16 @@
       <p><%= @product.summary %></p><br><br>
       <h3 class="my-3">Project Details</h3>
       <ul>
-        <li>The Original cost for this product is $<%= @product.original_cost%></li>
+        <li>Retail Price $<%= @product.original_cost%></li>
         <li>We are trying to Raise $<%= @product.goal_amount%></li>
-        <li>This Project started <%= @product.created_at.strftime("%B %d, %Y")  %></li>
-        <li>Funding will End <%= @product.end_date %></li>
+        <li>This Project started: <%= @product.created_at.strftime("%B, %d %Y")  %></li>
+        <li>Funding will end: <%= @product.end_date %></li>
 
       </ul><br>
       <% if logged_in?%>
-  <div><%= link_to 'Back this Product', new_funding_path, :class => "btn btn-outline-success btn-lg"%> <%= button_to 'Share', {:controller => 'shares', :action => 'create', :user_id => current_user.id, :product_id => @product.id}, {:method => :post, :form_class => "d-inline", :class => "btn btn-outline-success btn-lg"} %></div><br>
+  <div><%= link_to 'Contribute', new_funding_path, :class => "btn btn-outline-success btn-lg"%> <%= button_to 'Share', {:controller => 'shares', :action => 'create', :user_id => current_user.id, :product_id => @product.id}, {:method => :post, :form_class => "d-inline", :class => "btn btn-outline-success btn-lg"} %></div><br>
   <% else%>
-  <div><%= link_to 'Back this Product', new_user_path, :class => "btn btn-outline-success btn-lg"%> <%= link_to 'Share', new_user_path, :class => "btn btn-outline-primary btn-lg" %></div>
+  <div><%= link_to 'Contribute', new_user_path, :class => "btn btn-outline-success btn-lg"%> <%= link_to 'Share', new_user_path, :class => "btn btn-outline-primary btn-lg" %></div>
   <% end%>
 </div>
     </div>
@@ -53,8 +53,9 @@
   <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax=<%= @product.goal_amount%> style="width:<%=pp%>%">$<%=numbers2%></div>
 </div>
 </div>
-<!-- /.container --><br><br>
-<h3 class="back">This Product has Been Funded By</h3><br>
+<!-- /.container -->
+<% if @product.product_fundings.count > 0 %>
+
 <% @product.product_fundings.each do |v|%>
 <% u1 = Funding.find(v.funding_id)%>
 <% u2 = User.find(u1.user_id) %>
@@ -63,3 +64,4 @@
   <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
 </svg></span></h4><br>
 <% end %>
+<%end%>

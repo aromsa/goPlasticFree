@@ -5,11 +5,11 @@ class Product < ApplicationRecord
   has_many :fundings, through: :product_fundings
   has_many :shares
   has_many :users, through: :shares
-  # validates :name, presence: true
-  # validates :name, uniqueness: { case_sensitive: false }
-  # validates :original_cost, presence: true
-  # validates :original_cost, numericality: true
-  # validates :goal_amount, numericality: { only_integer: true }
-  # validates_format_of :img_url, :with => %r{\.(png|jpg|jpeg)\z}i, :message => "Use a real image"
-  # validates :summary, length: { minimum: 50 }
+  validates :name, presence: true
+  validates :name, uniqueness: { case_sensitive: false }
+  validates :original_cost, presence: true
+  validates :original_cost, numericality: true
+  validates :goal_amount, numericality: { only_integer: true }
+  validates_format_of :img_url, :with => %r{\.(png|jpg|jpeg)\z}i, :message => "Use a real image"
+  validates :summary, length: { minimum: 50 }
 end

@@ -16,8 +16,19 @@
    <a class="navbar-brand" href="/products">
     <img src="https://i.imgur.com/gfBU17p.png" width="200" height="60" alt="">
   </a>
-  <% if logged_in?%>
+  <% if logged_in?%> 
+  <div class="dropdown" style="float:right;">
   <%= link_to "Hi #{current_user.name}!", user_path(current_user), :class =>"btn btn-outline-success" %>
+  <div class="dropdown-content" style="right:0;">
+  <%= link_to "Update Account", edit_user_path(current_user.id) %>
+  <%= link_to "Add Product", new_product_path%>
+  <%= link_to "Delete Product"%>
+  <% if current_user == @user %>
+  <%= link_to "Log Out", session_path, method: :delete%> 
+  <% end %>
+  </div>
+</div>
+  
   </nav>
   <% else%>
   <form class="form-inline">
@@ -32,6 +43,7 @@
   </form>
 </nav>
 <% end%>
+
 
     <%= yield %>
   </body>
