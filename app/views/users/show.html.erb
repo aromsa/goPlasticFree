@@ -33,7 +33,7 @@
       <ul>
 
         <li><%=@user.interests %></li>
-       
+       <li>User Since <%= @user.created_at.strftime("%B %d, %Y")  %></li>
       </ul><br><br><%if current_user == @user%>
   <%= link_to "Start A new Funding", new_product_path,  :class =>"btn btn-primary btn-lg btn-block" %> 
   <% else%>

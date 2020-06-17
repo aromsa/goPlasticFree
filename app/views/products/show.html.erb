@@ -24,7 +24,7 @@
       <ul>
         <li>The Original cost for this product is $<%= @product.original_cost%></li>
         <li>We are trying to Raise $<%= @product.goal_amount%></li>
-        <li>This Project started <%= @product.start_date %></li>
+        <li>This Project started <%= @product.created_at.strftime("%B %d, %Y")  %></li>
         <li>Funding will End <%= @product.end_date %></li>
 
       </ul><br>
