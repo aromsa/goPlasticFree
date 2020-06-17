@@ -19,7 +19,11 @@
     <div class="form-group">
       <%= f.label :password %>
       <%= f.password_field :password, {class:"form-control", placeholder:"Your password must be at least 7 characters"}%>
-    </div>
+    </div><br>
+    Profile Picture
+    <div class="custom-file mb-3">
+    <input type="file" class="custom-file-input" id="validatedCustomFile" type="password" name="user[img_url]" default="https://www.google.com/search?q=profile+picture&sxsrf=ALeKk02d402S4nYxV_zTJPC53ODnKrfwmg:1592358149850&tbm=isch&source=iu&ictx=1&fir=ZbfgeaptF8Y5ZM%253A%252CSmb2EEjVhvpzWM%252C_&vet=1&usg=AI4_-kQmQXB57X3chRwlQS4fu5narHfYFg&sa=X&ved=2ahUKEwjG1IGv3IfqAhVRQjABHWj-BmkQ9QEwAnoECAoQMw#imgrc=ZbfgeaptF8Y5ZM:">
+    <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
     <%= f.submit "Submit", class:"btn btn-outline-success" %>
   <%end%>
 </div>
