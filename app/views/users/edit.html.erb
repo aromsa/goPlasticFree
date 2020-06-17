@@ -20,10 +20,10 @@
       <%= f.label :password %>
       <%= f.password_field :password, {class:"form-control", placeholder:"Your password must be at least 7 characters"}%>
     </div><br>
-    Profile Picture
-    <div class="custom-file mb-3">
-    <input type="file" class="custom-file-input" id="validatedCustomFile" type="password" name="user[img_url]">
-    <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+     <div class="form-group">
+      <%= f.label :img_url %>
+      <%= f.url_field :img_url, {class:"form-control"}%>
+    </div>
     <%= f.submit "Submit", class:"btn btn-outline-success" %>
   <%end%>
 </div>

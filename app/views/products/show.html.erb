@@ -29,22 +29,15 @@
 
       </ul><br>
       <% if logged_in?%>
-  <div><%= link_to 'Contribute', new_funding_path, :class => "btn btn-outline-success btn-lg"%> <%= button_to 'Share', {:controller => 'shares', :action => 'create', :user_id => current_user.id, :product_id => @product.id}, {:method => :post, :form_class => "d-inline", :class => "btn btn-outline-success btn-lg"} %></div><br>
-        <li>This Project started <%= @product.created_at.strftime("%B %d, %Y")  %></li>
-        <li>Funding will End <%= @product.end_date %></li>
-    
-
-      </ul><br>
-      <% if logged_in?%>
-  <div><%= link_to 'Back this Product', new_funding_path, :class => "btn btn-outline-success btn-lg"%> <%= button_to 'Share', {:controller => 'shares', :action => 'create', :user_id => current_user.id, :product_id => @product.id}, {:method => :post, :form_class => "d-inline", :class => "btn btn-outline-success btn-lg"} %>
+  <div><%= link_to 'Contribute', new_funding_path, :class => "btn btn-outline-success btn-lg"%> <%= button_to 'Share', {:controller => 'shares', :action => 'create', :user_id => current_user.id, :product_id => @product.id}, {:method => :post, :form_class => "d-inline", :class => "btn btn-outline-success btn-lg"} %>
    <% if current_user.name == @product.user.name%>
-  <%= link_to 'Edit Your Posting', edit_product_path, :class => "btn btn-link btn-sm" %>
+  <%= link_to 'Edit', edit_product_path, :class => "btn btn-outline-success btn-lg" %></div><br>
   <% else%>
   <% %>
   <% end%>
   </div><br>
   <% else%>
-  <div><%= link_to 'Contribute', new_user_path, :class => "btn btn-outline-success btn-lg"%> <%= link_to 'Share', new_user_path, :class => "btn btn-outline-primary btn-lg" %></div>
+  <div><%= link_to 'Contribute', new_user_path, :class => "btn btn-outline-success btn-lg"%> <%= link_to 'Share', new_user_path, :class => "btn btn-outline-success btn-lg" %></div>
   <% end%>
 </div>
     </div>
