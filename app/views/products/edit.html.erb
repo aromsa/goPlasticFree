@@ -1,0 +1,35 @@
+<div class="container p-3 my-3 border">
+  <h1>Edit Your listing</h1>
+</div>
+
+<div class="container p-3 my-3 border">
+  <%= form_for @product do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, {class:"form-control"}%>
+    </div>
+    <div class="form-group">
+      <%= f.label :original_cost %>
+      <%= f.number_field :original_cost, {class:"form-control"}%>
+    </div>
+    <div class="form-group">
+      <%= f.label :goal_amount %>
+      <%= f.number_field :goal_amount, {class:"form-control"}%>
+      
+    </div> 
+
+    <div class="form-group">
+      <%= f.label :img_url %>
+      <%= f.url_field :img_url, {class:"form-control"}%>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :summary %>
+      <%= f.text_area :summary, {class:"form-control"}%>
+    </div>
+
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+
+    <%= f.submit "Submit", class:"btn btn-outline-success" %>
+  <%end%>
+</div>

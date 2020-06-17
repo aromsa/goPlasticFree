@@ -26,10 +26,17 @@
         <li>We are trying to Raise $<%= @product.goal_amount%></li>
         <li>This Project started <%= @product.created_at.strftime("%B %d, %Y")  %></li>
         <li>Funding will End <%= @product.end_date %></li>
+    
 
       </ul><br>
       <% if logged_in?%>
-  <div><%= link_to 'Back this Product', new_funding_path, :class => "btn btn-outline-success btn-lg"%> <%= button_to 'Share', {:controller => 'shares', :action => 'create', :user_id => current_user.id, :product_id => @product.id}, {:method => :post, :form_class => "d-inline", :class => "btn btn-outline-success btn-lg"} %></div><br>
+  <div><%= link_to 'Back this Product', new_funding_path, :class => "btn btn-outline-success btn-lg"%> <%= button_to 'Share', {:controller => 'shares', :action => 'create', :user_id => current_user.id, :product_id => @product.id}, {:method => :post, :form_class => "d-inline", :class => "btn btn-outline-success btn-lg"} %>
+   <% if current_user.name == @product.user.name%>
+  <%= link_to 'Edit Your Posting', edit_product_path, :class => "btn btn-link btn-sm" %>
+  <% else%>
+  <% %>
+  <% end%>
+  </div><br>
   <% else%>
   <div><%= link_to 'Back this Product', new_user_path, :class => "btn btn-outline-success btn-lg"%> <%= link_to 'Share', new_user_path, :class => "btn btn-outline-primary btn-lg" %></div>
   <% end%>
@@ -47,10 +54,10 @@
 <% numbers2 = numbers.sum%>
 </div><br><br><br>
 <%pp = numbers2.to_f / @product.goal_amount.to_f * 100.0 %>
-<div class="bar">
+<div class="bar" >
 <h3>So Far This Product has Raised</h3><br>
 <div class="progress">
-  <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax=<%= @product.goal_amount%> style="width:<%=pp%>%">$<%=numbers2%></div>
+  <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax=<%= @product.goal_amount%> style="width:<%=pp%>%">$<%=numbers2%> of $<%=@product.goal_amount%></div>
 </div>
 </div>
 <!-- /.container --><br><br>
