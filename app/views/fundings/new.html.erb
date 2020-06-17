@@ -1,0 +1,33 @@
+<body>
+<%= form_for  @funding do |form| %>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Pledge</h5>
+            <form class="form-signin">
+              <div class="form-label-group"> 
+                <%= form.hidden_field :user_id, :value => current_user.id %>
+               <br>
+              </div>
+
+              <div class="form-label-group">
+             
+                <%= form.label :amount %>
+      <%= form.number_field :amount, {class:"form-control", placeholder:"Enter How much You would like to pledge"}%>
+                
+              </div><br><br>
+
+              <button class="btn btn-lg btn-success btn-block text-uppercase" type="submit" name="commit" value="fundng" data-disable-with="funding" >Pledge <svg class="bi bi-person-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+</svg></button>
+            
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</body>

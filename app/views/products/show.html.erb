@@ -28,7 +28,11 @@
         <li>Funding will End <%= @product.end_date %></li>
 
       </ul><br>
-  <div><%= link_to 'Back this Product', products_path, :class => "btn btn-outline-success btn-lg"%> <%= link_to 'Share', products_path, :class => "btn btn-outline-primary btn-lg" %></div>
+       <% if logged_in?%>
+  <div><%= link_to 'Back this Product', new_funding_path, :class => "btn btn-outline-success btn-lg"%> <%= link_to 'Share', products_path, :class => "btn btn-outline-primary btn-lg" %></div>
+  <% else%>
+  <div><%= link_to 'Back this Product', new_user_path, :class => "btn btn-outline-success btn-lg"%> <%= link_to 'Share', new_user_path, :class => "btn btn-outline-primary btn-lg" %></div>
+  <% end%>
 </div>
     </div>
 
