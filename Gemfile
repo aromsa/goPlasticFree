@@ -59,4 +59,4 @@ gem 'jquery-rails'
 
 gem 'bcrypt', '~> 3.1', '>= 3.1.12'
 
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
